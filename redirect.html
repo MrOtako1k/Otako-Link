@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    window.onload = function() {
+      const hash = window.location.hash.substring(1); // remove #
+      try {
+        const decoded = atob(hash); // decode base64
+        window.location.href = decoded;
+      } catch (e) {
+        document.body.innerHTML = "<h2>Invalid or broken link</h2>";
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
