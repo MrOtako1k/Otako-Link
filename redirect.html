@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <title>Redirecting...</title>
   <script>
-    window.onload = function() {
-      const hash = window.location.hash.substring(1); // remove #
+    window.onload = () => {
+      const hash = window.location.hash.substring(1);
       try {
-        const decoded = atob(hash); // decode base64
+        const decoded = atob(hash);
         window.location.href = decoded;
-      } catch (e) {
-        document.body.innerHTML = "<h2>Invalid or broken link</h2>";
+      } catch {
+        document.body.innerHTML = "<h2>Invalid link</h2>";
       }
-    }
+    };
   </script>
 </head>
 <body>
-  <p>Redirecting...</p>
+  <p>Redirecting to the original URL...</p>
 </body>
 </html>
